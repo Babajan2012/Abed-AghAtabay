@@ -212,7 +212,7 @@ a:hover { color: var(--primary-dark); }
 .theme-icon { transition: transform 0.4s ease; }
 
 /* offcanvas تاریک */
-.offcanvas { background: var(--bg-soft); border-left: 1px solid var(--border); }
+.offcanvas { background: var(--bg-soft); border-left: 1px solid var(--border); height: 100vh; }
 html[dir="rtl"] .offcanvas { border-left: none; border-right: 1px solid var(--border); }
 
 .offcanvas-header { border-bottom: 1px solid var(--border); }

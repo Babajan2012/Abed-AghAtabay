@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Abed AghAtabay — Personal website" />
+    <title>Abed AghAtabay</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+    <!-- ============ NAVBAR ============ -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="#home">
+                <span class="brand-mark"><i class="bi bi-code-slash"></i></span>
+                <span class="brand-name" data-i18n="brand">Abed AghAtabay</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-label="Toggle menu">
+                <i class="bi bi-list fs-4"></i>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title fw-bold" data-i18n="nav.menu">Menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body d-flex flex-column">
+                    <ul class="navbar-nav ms-auto mb-3 mb-lg-0 gap-1">
+                        <li class="nav-item"><a class="nav-link active" href="#home" data-i18n="nav.home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about" data-i18n="nav.about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#skills" data-i18n="nav.skills">Skills</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#portfolio"
+                                data-i18n="nav.portfolio">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact" data-i18n="nav.contact">Contact</a>
+                        </li>
+                    </ul>
+                    <div class="offcanvas-social mt-auto d-lg-none">
+                        <a href="https://github.com/Babajan2012" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex align-items-center gap-2 ms-lg-3">
+                <button class="btn-theme" id="themeToggle" aria-label="Toggle theme">
+                    <i class="bi bi-moon-stars theme-icon"></i>
+                </button>
+                <button class="btn-lang" id="langToggle">EN</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============ HERO ============ -->
+    <section id="home" class="hero">
+        <div class="hero-bg" aria-hidden="true">
+            <span class="orb orb-1"></span>
+            <span class="orb orb-2"></span>
+            <span class="orb orb-3"></span>
+        </div>
+        <div class="container hero-inner position-relative" style="z-index:2">
+            <div class="row align-items-center gy-4">
+                <div class="col-lg-6 order-lg-1 text-center text-lg-start" id="hero">
+                    <span class="badge-pill reveal mb-3 d-inline-flex align-items-center">
+                        <i class="bi bi-person-badge me-2"></i>
+                        <span data-i18n="hero.badge">Frontend Developer</span>
+                    </span>
+                    <h1 class="hero-title reveal">
+                        <span data-i18n="hero.greet" dir="rtl">Hi, I'm</span>
+                        <span class="gradient-text" data-i18n="hero.name" dir="rtl">Abed AghAtabay</span>
+                        <span class="typed-line" dir="rtl"><span class="typed-text"></span><span
+                                class="typed-caret"></span></span>
+                    </h1>
+                    <p class="hero-sub reveal" data-i18n="hero.desc">
+                        Welcome to my personal website. I love crafting beautiful, modern and efficient user
+                        experiences.
+                    </p>
+                    <div class="hero-actions reveal">
+                        <a href="#portfolio" class="btn btn-primary-grad">
+                            <i class="bi bi-grid-3x3-gap-fill me-2"></i><span data-i18n="hero.btnPortfolio">View
+                                Projects</span>
+                        </a>
+                        <a href="#contact" class="btn btn-ghost">
+                            <i class="bi bi-chat-dots me-2"></i><span data-i18n="hero.btnContact">Contact Me</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-2 text-center">
+                    <div class="hero-visual reveal">
+                        <div class="avatar-ring mx-auto">
+                            <img src="https://ui-avatars.com/api/?name=Abed+AghAtabay&size=260&background=1d6ff2&color=fff&font-size=0.4&bold=true"
+                                alt="Abed AghAtabay" class="hero-avatar" />
+                        </div>
+                        <div class="social-dock justify-content-center mt-4">
+                            <a href="https://github.com/Babajan2012" target="_blank" rel="noopener"
+                                aria-label="GitHub"><i class="bi bi-github"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                            <a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll reveal d-none d-lg-flex">
+            <span class="mouse"><span class="wheel"></span></span>
+            <span class="scroll-text" data-i18n="hero.scroll">Scroll down</span>
+        </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-head reveal" data-i18n="about-head">About Me</div>
+            <div class="row align-items-center gy-5">
+                <div class="col-lg-5 text-center reveal">
+                    <div class="about-visual">
+                        <div class="about-frame">
+                            <i class="bi bi-person-bounding-box"></i>
+                        </div>
+                        <div class="about-stats">
+                            <div class="stat-card stat-card-1"><strong data-count="5">0</strong><span
+                                    data-i18n="about.years">Years Experience</span></div>
+                            <div class="stat-card stat-card-2"><strong data-count="24">0</strong><span
+                                    data-i18n="about.projects">Projects Done</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 reveal">
+                    <h2 class="section-title" data-i18n="about.title">Who am I?</h2>
+                    <p class="lead" data-i18n="about.p1">
+                        I'm Abed, a frontend developer passionate about building modern and responsive websites. I'm
+                        always eager to learn new technologies and improve my skills.
+                    </p>
+                    <p class="muted" data-i18n="about.p2">
+                        This template is designed as a solid base for a professional personal website. All sections are
+                        fully responsive and built with smooth animations.
+                    </p>
+                    <div class="about-info">
+                        <div class="info-row"><span class="info-label" data-i18n="about.name">Name:</span><span
+                                data-i18n="about.nameVal">Abed AghAtabay</span></div>
+                        <div class="info-row"><span class="info-label" data-i18n="about.email">Email:</span><a
+                                href="mailto:attabayymhmdd@gmail.com">attabayymhmdd@gmail.com</a></div>
+                        <div class="info-row"><span class="info-label" data-i18n="about.role">Role:</span><span
+                                data-i18n="about.roleVal">Frontend Developer</span></div>
+                        <div class="info-row"><span class="info-label" data-i18n="about.location">Location:</span><span
+                                data-i18n="about.locationVal">Tehran, Iran</span></div>
+                    </div>
+                    <a href="#contact" class="btn btn-primary-grad mt-3">
+                        <i class="bi bi-download me-2"></i><span data-i18n="about.btn">Hire Me</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section id="skills" class="section section-alt">
+        <div class="container">
+            <div class="section-head reveal" data-i18n="skills-head">Skills</div>
+            <h2 class="section-title text-center reveal" data-i18n="skills.title">Technologies I work with</h2>
+            <div class="row g-4 mt-3">
+                <div class="col-md-4 col-sm-6 reveal" data-delay="0">
+                    <div class="skill-card h-100 text-center p-4">
+                        <div class="skill-icon mx-auto"><i class="bi bi-code-slash"></i></div>
+                        <h4>HTML / CSS</h4>
+                        <div class="skill-bar"><span style="--p:92%"></span></div>
+                        <span class="skill-pct">92%</span>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 reveal" data-delay="1">
+                    <div class="skill-card h-100 text-center p-4">
+                        <div class="skill-icon mx-auto"><i class="bi bi-braces"></i></div>
+                        <h4>JavaScript</h4>
+                        <div class="skill-bar"><span style="--p:85%"></span></div>
+                        <span class="skill-pct">85%</span>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 reveal" data-delay="2">
+                    <div class="skill-card h-100 text-center p-4">
+                        <div class="skill-icon mx-auto"><i class="bi bi-layers"></i></div>
+                        <h4>React &amp; Vue</h4>
+                        <div class="skill-bar"><span style="--p:80%"></span></div>
+                        <span class="skill-pct">80%</span>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 reveal" data-delay="0">
+                    <div class="skill-card h-100 text-center p-4">
+                        <div class="skill-icon mx-auto"><i class="bi bi-database"></i></div>
+                        <h4>Node.js</h4>
+                        <div class="skill-bar"><span style="--p:78%"></span></div>
+                        <span class="skill-pct">78%</span>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 reveal" data-delay="1">
+                    <div class="skill-card h-100 text-center p-4">
+                        <div class="skill-icon mx-auto"><i class="bi bi-git"></i></div>
+                        <h4>Git &amp; GitHub</h4>
+                        <div class="skill-bar"><span style="--p:88%"></span></div>
+                        <span class="skill-pct">88%</span>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 reveal" data-delay="2">
+                    <div class="skill-card h-100 text-center p-4">
+                        <div class="skill-icon mx-auto"><i class="bi bi-palette"></i></div>
+                        <h4>UI/UX</h4>
+                        <div class="skill-bar"><span style="--p:83%"></span></div>
+                        <span class="skill-pct">83%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PORTFOLIO ============ -->
+    <section id="portfolio" class="section">
+        <div class="container">
+            <div class="section-head reveal" data-i18n="portfolio-head">Portfolio</div>
+            <h2 class="section-title text-center reveal" data-i18n="portfolio.title">Some of my recent projects</h2>
+            <div class="row g-4 mt-3">
+                <div class="col-lg-4 col-md-6 reveal" data-delay="0">
+                    <div class="project-card h-100">
+                        <div class="project-media">
+                            <img src="https://placehold.co/600x420/1d6ff2/ffffff?text=Project+1" alt="Project 1"
+                                class="img-fluid" />
+                            <div class="project-overlay">
+                                <div class="project-tags"><span>HTML</span><span>CSS</span></div>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <h4 data-i18n="portfolio.p1t">Corporate Website</h4>
+                            <p data-i18n="portfolio.p1d">Responsive design with soft and modern animations.</p>
+                            <div class="project-links">
+                                <a href="#" class="link-btn"><i class="bi bi-box-arrow-up-right"></i></a>
+                                <a href="#" class="link-btn"><i class="bi bi-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 reveal" data-delay="1">
+                    <div class="project-card h-100">
+                        <div class="project-media">
+                            <img src="https://placehold.co/600x420/0ea5e9/ffffff?text=Project+2" alt="Project 2"
+                                class="img-fluid" />
+                            <div class="project-overlay">
+                                <div class="project-tags"><span>React</span><span>JS</span></div>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <h4 data-i18n="portfolio.p2t">Task Management App</h4>
+                            <p data-i18n="portfolio.p2d">Modern UI built with React and state management.</p>
+                            <div class="project-links">
+                                <a href="#" class="link-btn"><i class="bi bi-box-arrow-up-right"></i></a>
+                                <a href="#" class="link-btn"><i class="bi bi-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 reveal" data-delay="2">
+                    <div class="project-card h-100">
+                        <div class="project-media">
+                            <img src="https://placehold.co/600x420/7c3aed/ffffff?text=Project+3" alt="Project 3"
+                                class="img-fluid" />
+                            <div class="project-overlay">
+                                <div class="project-tags"><span>Vue</span><span>Firebase</span></div>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <h4 data-i18n="portfolio.p3t">Personal Blog</h4>
+                            <p data-i18n="portfolio.p3d">Content management with Vue and cloud database.</p>
+                            <div class="project-links">
+                                <a href="#" class="link-btn"><i class="bi bi-box-arrow-up-right"></i></a>
+                                <a href="#" class="link-btn"><i class="bi bi-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="section section-alt">
+        <div class="container">
+            <div class="section-head reveal" data-i18n="contact-head">Contact</div>
+            <h2 class="section-title text-center reveal" data-i18n="contact.title">I'd love to hear from you</h2>
+            <div class="row gy-5 mt-3">
+                <div class="col-lg-5 reveal">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="bi bi-envelope"></i></div>
+                            <div>
+                                <span class="info-label" data-i18n="contact.email">Email</span>
+                                <a href="mailto:attabayymhmdd@gmail.com">attabayymhmdd@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="bi bi-github"></i></div>
+                            <div>
+                                <span class="info-label">GitHub</span>
+                                <a href="https://github.com/Babajan2012" target="_blank"
+                                    rel="noopener">github.com/Babajan2012</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="bi bi-geo-alt"></i></div>
+                            <div>
+                                <span class="info-label" data-i18n="contact.location">Location</span>
+                                <span data-i18n="contact.locationVal">Tehran, Iran</span>
+                            </div>
+                        </div>
+                        <div class="contact-social mt-3">
+                            <a href="https://github.com/Babajan2012" target="_blank" rel="noopener"
+                                aria-label="GitHub"><i class="bi bi-github"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                            <a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 reveal">
+                    <form class="contact-form" id="contactForm">
+                        <div class="row g-3">
+                            <div class="col-sm-6">
+                                <label for="name" class="form-label fw-semibold" data-i18n="contact.fName">Name</label>
+                                <input type="text" class="form-control" id="name" data-i18n-ph="contact.phName"
+                                    placeholder="Enter your name" required />
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="email" class="form-label fw-semibold"
+                                    data-i18n="contact.fEmail">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="example@mail.com"
+                                    required />
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <label for="subject" class="form-label fw-semibold"
+                                data-i18n="contact.fSubject">Subject</label>
+                            <input type="text" class="form-control" id="subject" data-i18n-ph="contact.phSubject"
+                                placeholder="Message subject" required />
+                        </div>
+                        <div class="mt-3">
+                            <label for="message" class="form-label fw-semibold"
+                                data-i18n="contact.fMessage">Message</label>
+                            <textarea class="form-control" id="message" rows="5" data-i18n-ph="contact.phMessage"
+                                placeholder="Write your message..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary-grad btn-block w-100 mt-3">
+                            <i class="bi bi-send me-2"></i><span data-i18n="contact.btn">Send Message</span>
+                        </button>
+                        <div class="form-status" id="formStatus"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row gy-4 pb-4">
+                <div class="col-lg-3 col-md-6">
+                    <a href="#home"
+                        class="brand footer-brand d-inline-flex align-items-center gap-2 text-decoration-none mb-2">
+                        <span class="brand-mark"><i class="bi bi-code-slash"></i></span>
+                        <span class="brand-name fw-bold" data-i18n="footer.aboutTitle">Abed AghAtabay</span>
+                    </a>
+                    <p class="footer-about" data-i18n="footer.about">
+                        Frontend developer passionate about crafting modern, responsive and user-friendly websites.
+                    </p>
+                    <div class="footer-social d-flex gap-2">
+                        <a href="https://github.com/Babajan2012" target="_blank" rel="noopener" aria-label="GitHub"><i
+                                class="bi bi-github"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title" data-i18n="footer.quickTitle">Quick Links</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li><a href="#home" data-i18n="nav.home">Home</a></li>
+                        <li><a href="#about" data-i18n="nav.about">About</a></li>
+                        <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+                        <li><a href="#portfolio" data-i18n="nav.portfolio">Projects</a></li>
+                        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title" data-i18n="footer.servicesTitle">Services</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li><a href="#" data-i18n="footer.s1">Web Design</a></li>
+                        <li><a href="#" data-i18n="footer.s2">Frontend Development</a></li>
+                        <li><a href="#" data-i18n="footer.s3">UI Design</a></li>
+                        <li><a href="#" data-i18n="footer.s4">Performance & Optimization</a></li>
+                        <li><a href="#" data-i18n="footer.s5">Responsive & Mobile</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title" data-i18n="footer.contactTitle">Contact</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li class="footer-contact-item"><i class="bi bi-envelope"></i><a
+                                href="mailto:attabayymhmdd@gmail.com">attabayymhmdd@gmail.com</a></li>
+                        <li class="footer-contact-item"><i class="bi bi-github"></i><a
+                                href="https://github.com/Babajan2012" target="_blank"
+                                rel="noopener">github.com/Babajan2012</a></li>
+                        <li class="footer-contact-item"><i class="bi bi-geo-alt"></i><span
+                                data-i18n="footer.location">Tehran, Iran</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="footer-bottom py-3 border-top d-flex justify-content-between align-items-center flex-wrap gap-2">
+                <span class="footer-copy">
+                    All rights reserved for <span class="accent" data-i18n="footer.copyrightName">Abed AghAtabay</span>
+                    &copy; <span id="year">2026</span>
+                </span>
+                <a href="#home" class="back-top" aria-label="Back to top"><i class="bi bi-arrow-up"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
