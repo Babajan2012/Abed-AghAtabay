@@ -606,12 +606,21 @@ html[dir="rtl"] .offcanvas {
 @media only screen and (min-width: 992px) {
   .stat-card-1 {
     top: 10%;
-    left: -18%;
+    left: -24%;
   }
   .stat-card-2 {
     bottom: 4%;
     right: -18%;
     animation-delay: 2s;
+  }
+  html[dir="rtl"] .stat-card-1 {
+    left: auto;
+    right: -24%;
+    top: 10%;
+  }
+  html[dir="rtl"] .stat-card-2 {
+    right: auto;
+    left: -18%;
   }
 }
 @media only screen and (max-width: 990px) {
@@ -624,16 +633,17 @@ html[dir="rtl"] .offcanvas {
     right: -25%;
     animation-delay: 2s;
   }
-} */
+  html[dir="rtl"] .stat-card-1 {
+    left: auto;
+    right: -35%;
+    top: 10%;
+  }
+  html[dir="rtl"] .stat-card-2 {
+    right: auto;
+    left: -30%;
+  }
+}
 
-html[dir="rtl"] .stat-card-1 {
-  left: auto;
-  right: 10%;
-}
-html[dir="rtl"] .stat-card-2 {
-  right: auto;
-  left: 10%;
-}
 .about-info {
   margin: 1.5rem 0;
   display: grid;
@@ -1107,23 +1117,6 @@ html[dir="rtl"] .footer-title::after {
   }
   .stat-card strong {
     font-size: 1.4rem;
-  }
-  /* .stat-card-1 {
-    top: -8px;
-    left: -8px;
-  }
-  .stat-card-2 {
-    bottom: -8px;
-    right: -8px;
-  } */
-
-  html[dir="rtl"] .stat-card-1 {
-    left: auto;
-    right: -8px;
-  }
-  html[dir="rtl"] .stat-card-2 {
-    right: auto;
-    left: -8px;
   }
 }
 
