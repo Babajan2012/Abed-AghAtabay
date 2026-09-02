@@ -7,20 +7,20 @@
 
   const i18n = {
     fa: {
-      brand: "عابد آقاتابای",
+      brand: "عابد آق آتابای",
       "nav.menu": "منو",
       "nav.home": "خانه",
       "nav.about": "درباره من",
       "nav.skills": "مهارت‌ها",
       "nav.portfolio": "نمونه‌کارها",
       "nav.contact": "تماس",
-      "hero.badge": "توسعه‌دهنده فرانت‌اند",
+      "hero.badge": "توسعه‌دهنده فول‌استک",
       "hero.greet": "سلام، من",
-      "hero.name": "عابد آقاتابای",
+      "hero.name": "عابد آق آتابای",
       "hero.roles": [
-        "توسعه‌دهنده فرانت‌اند",
-        "طراح رابط کاربری",
-        "علاقه‌مند به تجربه کاربری",
+        "توسعه‌دهنده فول‌استک",
+        "توسعه‌دهنده بک‌اند",
+        "طراح رابط کاربری"
       ],
       "hero.desc":
         "به وب‌سایت شخصی من خوش آمدید. من عاشق طراحی تجربه‌های کاربری زیبا، مدرن و کارآمد هستم.",
@@ -30,14 +30,14 @@
       "about-head": "درباره من",
       "about.title": "من کی هستم؟",
       "about.p1":
-        "من عابد هستم، توسعه‌دهنده فرانت‌اند با علاقه به ساخت وب‌سایت‌های مدرن و ریسپانسیو. همیشه به دنبال یادگیری تکنولوژی‌های جدید و بهبود مهارت‌های خود هستم.",
+        "من عابد هستم، توسعه‌دهنده فول‌استک با علاقه به ساخت وب‌سایت‌های مدرن و ریسپانسیو. همیشه به دنبال یادگیری تکنولوژی‌های جدید و بهبود مهارت‌های خود هستم.",
       "about.p2":
         "این قالب به گونه‌ای طراحی شده که پایه‌ای محکم برای یک سایت شخصی حرفه‌ای باشد. همه بخش‌ها کاملاً ریسپانسیو و با انیمیشن‌های نرم ساخته شده‌اند.",
       "about.name": "نام:",
-      "about.nameVal": "عابد آقاتابای",
+      "about.nameVal": "عابد آق آتابای",
       "about.email": "ایمیل:",
       "about.role": "نقش:",
-      "about.roleVal": "توسعه‌دهنده فرانت‌اند",
+      "about.roleVal": "توسعه‌دهنده فول‌استک",
       "about.location": "موقعیت:",
       "about.locationVal": "تهران، ایران",
       "about.years": "سال تجربه",
@@ -69,13 +69,13 @@
       "form.sending": "در حال ارسال...",
       "form.success": "پیام شما با موفقیت ارسال شد. ممنون از تماس شما!",
       "form.error": "لطفاً همه فیلدها را به درستی پر کنید.",
-      "footer.aboutTitle": "عابد آقاتابای",
+      "footer.aboutTitle": "عابد آق آتابای",
       "footer.about":
-        "توسعه‌دهنده فرانت‌اند با علاقه به طراحی وب‌سایت‌های مدرن، ریسپانسیو و کاربرپسند.",
+        "توسعه‌دهنده فول‌استک با علاقه به طراحی وب‌سایت‌های مدرن، ریسپانسیو و کاربرپسند.",
       "footer.quickTitle": "دسترسی سریع",
       "footer.servicesTitle": "خدمات",
       "footer.s1": "طراحی وب‌سایت",
-      "footer.s2": "توسعه فرانت‌اند",
+      "footer.s2": "توسعه فول‌استک",
       "footer.s3": "طراحی رابط کاربری",
       "footer.s4": "بهینه‌سازی و سرعت",
       "footer.s5": "ریسپانسیو و موبایل",
@@ -91,10 +91,10 @@
       "nav.skills": "Skills",
       "nav.portfolio": "Projects",
       "nav.contact": "Contact",
-      "hero.badge": "Frontend Developer",
+      "hero.badge": "Fullstack Developer",
       "hero.greet": "Hi, I'm",
       "hero.name": "Abed AghAtabay",
-      "hero.roles": ["Frontend Developer", "UI Designer", "UX Enthusiast"],
+      "hero.roles": ["Fullstack Developer", "Backend Developer", "UI/UX Designer"],
       "hero.desc":
         "Welcome to my personal website. I love crafting beautiful, modern and efficient user experiences.",
       "hero.btnPortfolio": "View Projects",
@@ -103,14 +103,14 @@
       "about-head": "About Me",
       "about.title": "Who am I?",
       "about.p1":
-        "I'm Abed, a frontend developer passionate about building modern and responsive websites. I'm always eager to learn new technologies and improve my skills.",
+        "I'm Abed, a fullstack developer passionate about building modern and responsive websites. I'm always eager to learn new technologies and improve my skills.",
       "about.p2":
         "This template is designed as a solid base for a professional personal website. All sections are fully responsive and built with smooth animations.",
       "about.name": "Name:",
       "about.nameVal": "Abed AghAtabay",
       "about.email": "Email:",
       "about.role": "Role:",
-      "about.roleVal": "Frontend Developer",
+      "about.roleVal": "Fullstack Developer",
       "about.location": "Location:",
       "about.locationVal": "Tehran, Iran",
       "about.years": "Years Experience",
@@ -144,11 +144,11 @@
       "form.error": "Please fill all fields correctly.",
       "footer.aboutTitle": "Abed AghAtabay",
       "footer.about":
-        "Frontend developer passionate about crafting modern, responsive and user-friendly websites.",
+        "Fullstack developer passionate about crafting modern, responsive and user-friendly websites.",
       "footer.quickTitle": "Quick Links",
       "footer.servicesTitle": "Services",
       "footer.s1": "Web Design",
-      "footer.s2": "Frontend Development",
+      "footer.s2": "Fullstack Development",
       "footer.s3": "UI Design",
       "footer.s4": "Performance & Optimization",
       "footer.s5": "Responsive & Mobile",
@@ -207,11 +207,10 @@
       if (i18n[lang] && i18n[lang][k] !== undefined)
         el.placeholder = i18n[lang][k];
     });
-    document.title = lang === "fa" ? "عابد آقاتابای" : "Abed AghAtabay";
+    document.title = lang === "fa" ? "عابد آق آتابای" : "Abed AghAtabay";
     const lb = document.getElementById("langToggle");
     if (lb) lb.textContent = lang === "fa" ? "EN" : "فا";
     startTyping(lang);
-
   }
 
   function setLang(lang) {
@@ -220,7 +219,6 @@
     root.setAttribute("dir", lang === "fa" ? "rtl" : "ltr");
     localStorage.setItem("abed_lang", lang);
 
-    // تغییر جهت offcanvas برای RTL
     const offcanvas = document.getElementById("mobileMenu");
     if (offcanvas) {
       offcanvas.classList.remove("offcanvas-end", "offcanvas-start");
@@ -229,7 +227,6 @@
       );
     }
 
-    // تغییر جهت متن hero برای RTL
     const hero = document.getElementById("hero");
     if (hero) {
       hero.classList.remove("text-lg-start", "text-lg-end");
