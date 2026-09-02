@@ -165,21 +165,20 @@
   let currentTheme = savedTheme;
 
   /* ---------- تایپ افکت ---------- */
-  const typedEl = document.querySelector(".typed-text");
+  const typedEl = document.querySelector(".typed-line");
   let typeTimeout = null;
 
   function startTyping(lang) {
     if (!typedEl) return;
     clearTimeout(typeTimeout);
+    if (typedEl) typedEl.setAttribute("dir", "ltr");
     const roles = i18n[lang]["hero.roles"] || [];
     let ri = 0,
       ci = 0,
       del = false;
     function tick() {
       const w = roles[ri];
-      typedEl.textContent = del
-        ? w.substring(0, ci - 1)
-        : w.substring(0, ci + 1);
+      typedEl.textContent = del ? w.substring(0, ci - 1) : w.substring(0, ci + 1);
       ci += del ? -1 : 1;
       let spd = del ? 40 : 80;
       if (!del && ci === w.length) {

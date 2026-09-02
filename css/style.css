@@ -416,24 +416,35 @@ html[dir="rtl"] .offcanvas {
 .hero-title span {
   display: block;
 }
+.hero-title .typed-line {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+}
 
 .typed-line {
-  display: inline-flex;
-  align-items: center;
+  display: block;
+  width: fit-content;
+  min-width: 0;
   height: 1.5em;
   min-height: 1.5em;
   color: var(--accent);
   white-space: nowrap;
-  max-width: 100%;
-  overflow: hidden;
+  direction: ltr;
+  font-size: inherit;
+  line-height: 1.25;
+  unicode-bidi: plaintext;
 }
 
-.typed-caret {
+.typed-line::after {
+  content: "";
+  display: inline-block;
   width: 3px;
-  height: 1.1em;
-  margin-inline-start: 4px;
+  height: 0.9em;
   background: var(--accent);
   border-radius: 2px;
+  margin-inline-start: 1px;
+  vertical-align: -0.15em;
   animation: blink 0.8s step-end infinite;
 }
 
