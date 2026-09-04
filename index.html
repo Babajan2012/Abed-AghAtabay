@@ -26,31 +26,37 @@
                 <span class="brand-mark"><i class="bi bi-code-slash"></i></span>
                 <span class="brand-name" data-i18n="brand">Abed AghAtabay</span>
             </a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-label="Toggle menu">
-                <i class="bi bi-list fs-4"></i>
+            <button class="nav-burger" id="navBurger" type="button" aria-label="Toggle menu" aria-expanded="false"
+                aria-controls="radialMenu">
+                <span class="burger-lines">
+                    <span></span>
+                    <span></span>
+                </span>
             </button>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title fw-bold" data-i18n="nav.menu">Menu</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <div class="radial-menu" id="radialMenu" aria-hidden="true">
+                <canvas class="radial-menu__cracks" id="crackCanvas" aria-hidden="true"></canvas>
+                <div class="radial-menu__bg"></div>
+                <div class="radial-menu__center">
+                    <span class="radial-menu__label" data-i18n="nav.menu">Menu</span>
                 </div>
-                <div class="offcanvas-body d-flex flex-column">
-                    <ul class="navbar-nav ms-auto mb-3 mb-lg-0 gap-1">
-                        <li class="nav-item"><a class="nav-link active" href="#home" data-i18n="nav.home">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#about" data-i18n="nav.about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#skills" data-i18n="nav.skills">Skills</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#portfolio"
-                                data-i18n="nav.portfolio">Projects</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact" data-i18n="nav.contact">Contact</a>
-                        </li>
-                    </ul>
-                    <div class="offcanvas-social mt-auto d-lg-none">
-                        <a href="https://github.com/Babajan2012" aria-label="GitHub"><i class="bi bi-github"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-                        <a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a>
-                    </div>
+                <ul class="radial-menu__list" role="menu">
+                    <li style="--i:0" role="none"><a class="radial-menu__item" href="#home" data-i18n="nav.home"
+                            role="menuitem"></a></li>
+                    <li style="--i:1" role="none"><a class="radial-menu__item" href="#about" data-i18n="nav.about"
+                            role="menuitem"></a></li>
+                    <li style="--i:2" role="none"><a class="radial-menu__item" href="#skills" data-i18n="nav.skills"
+                            role="menuitem"></a></li>
+                    <li style="--i:3" role="none"><a class="radial-menu__item" href="#portfolio"
+                            data-i18n="nav.portfolio" role="menuitem"></a></li>
+                    <li style="--i:4" role="none"><a class="radial-menu__item" href="#contact" data-i18n="nav.contact"
+                            role="menuitem"></a></li>
+                </ul>
+                <div class="radial-menu__social">
+                    <a href="https://github.com/Babajan2012" target="_blank" rel="noopener" aria-label="GitHub"><i
+                            class="bi bi-github"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a>
                 </div>
             </div>
             <div class="d-flex align-items-center gap-2 ms-lg-3">
@@ -79,7 +85,9 @@
                     <h1 class="hero-title reveal">
                         <span data-i18n="hero.greet" dir="rtl"></span>
                         <span class="gradient-text" data-i18n="hero.name" dir="rtl"></span>
-                        <span class="typed-line overflow-visible" dir="ltr" aria-live="polite"></span>
+                        <!-- <div class="px-auto"> -->
+                            <span class="typed-line overflow-visible text-center mx-lg-0 mx-auto" dir="ltr" aria-live="polite"></span>
+                        <!-- </div> -->
                     </h1>
                     <p class="hero-sub reveal mx-auto" data-i18n="hero.desc">
                     </p>
@@ -95,8 +103,8 @@
                 <div class="col-lg-5 order-lg-2 text-center">
                     <div class="hero-visual reveal">
                         <div class="avatar-ring mx-auto">
-                            <img src="./images/ChatGPT Image Sep 1, 2026, 04_32_07 PM.png"
-                                alt="Abed AghAtabay" class="hero-avatar"/>
+                            <img src="./images/ChatGPT Image Sep 1, 2026, 04_32_07 PM.png" alt="Abed AghAtabay"
+                                class="hero-avatar" />
                         </div>
                         <div class="social-dock justify-content-center mt-4">
                             <a href="https://github.com/Babajan2012" target="_blank" rel="noopener"

@@ -267,7 +267,7 @@
 
   /* ---------- لینک فعال ---------- */
   const sections = document.querySelectorAll("section[id]");
-  const navLinks = document.querySelectorAll(".nav-link");
+  const navLinks = document.querySelectorAll(".radial-menu__item, .navbar-nav .nav-link");
   function setActive() {
     let cur = "";
     const sp = window.scrollY + 120;
@@ -390,4 +390,236 @@
   setLang(currentLang);
   setActive();
   initializeRTL();
+
+  /* ---------- منوی Radial با شیشه شکستنی ---------- */
+  const burger = document.getElementById("navBurger");
+  const radialMenu = document.getElementById("radialMenu");
+  const crackCanvas = document.getElementById("crackCanvas");
+  const ctx = crackCanvas ? crackCanvas.getContext("2d") : null;
+
+  if (burger && radialMenu) {
+    let crackRegions = [];
+    let mouseX = -1000;
+    let mouseY = -1000;
+    let mouseInside = false;
+    let animFrame = null;
+    let isBreaking = false;
+    const CRACK_RADIUS = 90;
+
+    function resizeCanvas() {
+      if (!crackCanvas) return;
+      const dpr = window.devicePixelRatio || 1;
+      crackCanvas.width = window.innerWidth * dpr;
+      crackCanvas.height = window.innerHeight * dpr;
+      crackCanvas.style.width = window.innerWidth + "px";
+      crackCanvas.style.height = window.innerHeight + "px";
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.scale(dpr, dpr);
+    }
+
+    function rand(min, max) { return min + Math.random() * (max - min); }
+
+    function buildCrackRegion(cx, cy) {
+      const sides = 9 + Math.floor(Math.random() * 4);
+      const baseR = CRACK_RADIUS * (0.7 + Math.random() * 0.5);
+      const points = [];
+      for (let i = 0; i < sides; i++) {
+        const a = (Math.PI * 2 * i) / sides;
+        const r = baseR * (0.55 + Math.random() * 0.6);
+        points.push({
+          x: cx + Math.cos(a) * r,
+          y: cy + Math.sin(a) * r
+        });
+      }
+      return { cx, cy, points, birth: performance.now(), life: 1 };
+    }
+
+    function drawCracks() {
+      if (!ctx) return;
+      ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+      const now = performance.now();
+      const wobble = (now / 80) % (Math.PI * 2);
+      crackRegions.forEach((r) => {
+        const age = (now - r.birth) / 1000;
+        r.life = Math.max(0, 1 - age * 0.5);
+        if (r.life <= 0) return;
+        ctx.save();
+        ctx.translate(r.cx, r.cy);
+        ctx.strokeStyle = `rgba(255, 255, 255, ${0.85 * r.life})`;
+        ctx.lineWidth = 1.4;
+        ctx.shadowColor = "rgba(180, 220, 255, 0.7)";
+        ctx.shadowBlur = 2;
+        ctx.beginPath();
+        r.points.forEach((p, i) => {
+          const ox = Math.sin(wobble + i) * 0.6;
+          const oy = Math.cos(wobble + i * 0.7) * 0.6;
+          if (i === 0) ctx.moveTo(p.x - r.cx + ox, p.y - r.cy + oy);
+          else ctx.lineTo(p.x - r.cx + ox, p.y - r.cy + oy);
+        });
+        ctx.closePath();
+        ctx.stroke();
+        ctx.strokeStyle = `rgba(255, 255, 255, ${0.4 * r.life})`;
+        ctx.lineWidth = 0.8;
+        for (let i = 0; i < r.points.length; i++) {
+          const p1 = r.points[i];
+          const p2 = r.points[(i + 1) % r.points.length];
+          if (Math.random() < 0.4) {
+            const mx = (p1.x + p2.x) / 2 - r.cx + (Math.random() - 0.5) * 10;
+            const my = (p1.y + p2.y) / 2 - r.cy + (Math.random() - 0.5) * 10;
+            ctx.beginPath();
+            ctx.moveTo(p1.x - r.cx, p1.y - r.cy);
+            ctx.lineTo(mx, my);
+            ctx.stroke();
+          }
+        }
+        ctx.restore();
+      });
+      crackRegions = crackRegions.filter((r) => r.life > 0);
+    }
+
+    function loop() {
+      if (mouseInside && !isBreaking) {
+        crackRegions.push(buildCrackRegion(mouseX, mouseY));
+      }
+      drawCracks();
+      animFrame = requestAnimationFrame(loop);
+    }
+
+    function buildShards(cx, cy) {
+      const count = 14;
+      const shards = [];
+      for (let i = 0; i < count; i++) {
+        const a = (Math.PI * 2 * i) / count + rand(-0.15, 0.15);
+        const baseR = rand(40, 130);
+        const verts = [];
+        const sides = 3 + Math.floor(Math.random() * 3);
+        for (let s = 0; s < sides; s++) {
+          const sa = a + rand(-0.5, 0.5);
+          const sr = baseR * rand(0.5, 1);
+          verts.push({ x: Math.cos(sa) * sr, y: Math.sin(sa) * sr });
+        }
+        const centerDist = rand(20, 80);
+        shards.push({
+          x: cx + Math.cos(a) * centerDist,
+          y: cy + Math.sin(a) * centerDist,
+          verts,
+          vx: Math.cos(a) * rand(6, 14),
+          vy: Math.sin(a) * rand(6, 14) - rand(1, 4),
+          rot: rand(-0.2, 0.2),
+          spin: rand(-0.05, 0.05),
+          life: 1
+        });
+      }
+      return shards;
+    }
+
+    function breakGlass(clickX, clickY) {
+      if (isBreaking) return;
+      isBreaking = true;
+      crackRegions = [];
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      const shards = buildShards(clickX, clickY);
+      const start = performance.now();
+      function anim() {
+        const now = performance.now();
+        const t = (now - start) / 1000;
+        if (t >= 1.2) {
+          toggleMenu(false);
+          isBreaking = false;
+          ctx.clearRect(0, 0, w, h);
+          return;
+        }
+        ctx.clearRect(0, 0, w, h);
+        shards.forEach((s) => {
+          s.x += s.vx;
+          s.y += s.vy;
+          s.vy += 0.5;
+          s.rot += s.spin;
+          s.life = Math.max(0, 1 - t * 0.9);
+          ctx.save();
+          ctx.globalAlpha = s.life;
+          ctx.translate(s.x, s.y);
+          ctx.rotate(s.rot);
+          const grad = ctx.createLinearGradient(-60, -60, 60, 60);
+          grad.addColorStop(0, "rgba(200, 220, 255, 0.35)");
+          grad.addColorStop(0.5, "rgba(150, 180, 220, 0.25)");
+          grad.addColorStop(1, "rgba(100, 130, 180, 0.15)");
+          ctx.fillStyle = grad;
+          ctx.beginPath();
+          s.verts.forEach((v, i) => {
+            if (i === 0) ctx.moveTo(v.x, v.y);
+            else ctx.lineTo(v.x, v.y);
+          });
+          ctx.closePath();
+          ctx.fill();
+          ctx.strokeStyle = `rgba(255, 255, 255, ${0.7 * s.life})`;
+          ctx.lineWidth = 1;
+          ctx.stroke();
+          ctx.strokeStyle = `rgba(180, 210, 255, ${0.3 * s.life})`;
+          ctx.lineWidth = 0.5;
+          for (let i = 0; i < s.verts.length; i++) {
+            const v = s.verts[i];
+            if (Math.random() < 0.3) {
+              ctx.beginPath();
+              ctx.moveTo(v.x, v.y);
+              ctx.lineTo(v.x * 0.3, v.y * 0.3);
+              ctx.stroke();
+            }
+          }
+          ctx.restore();
+        });
+        requestAnimationFrame(anim);
+      }
+      anim();
+    }
+
+    const toggleMenu = (open) => {
+      const isOpen = open ?? !radialMenu.classList.contains("is-open");
+      radialMenu.classList.toggle("is-open", isOpen);
+      burger.classList.toggle("is-open", isOpen);
+      burger.setAttribute("aria-expanded", String(isOpen));
+      radialMenu.setAttribute("aria-hidden", String(!isOpen));
+      document.body.style.overflow = isOpen ? "hidden" : "";
+      if (isOpen) {
+        resizeCanvas();
+        if (!animFrame) loop();
+      } else {
+        crackRegions = [];
+        if (ctx) ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+        mouseX = -1000;
+        mouseY = -1000;
+        mouseInside = false;
+      }
+    };
+
+    burger.addEventListener("click", () => toggleMenu());
+    radialMenu.querySelectorAll(".radial-menu__item").forEach((link) => {
+      link.addEventListener("click", () => toggleMenu(false));
+    });
+    radialMenu.addEventListener("mousemove", (e) => {
+      if (isBreaking) return;
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      mouseInside = true;
+    });
+    radialMenu.addEventListener("mouseleave", () => {
+      mouseInside = false;
+    });
+    radialMenu.addEventListener("click", (e) => {
+      if (e.target.closest(".radial-menu__item, .radial-menu__social, .nav-burger, .radial-menu__center")) return;
+      breakGlass(e.clientX, e.clientY);
+    });
+    radialMenu.addEventListener("touchstart", (e) => {
+      if (e.target.closest(".radial-menu__item, .radial-menu__social")) return;
+      const t = e.touches[0];
+      breakGlass(t.clientX, t.clientY);
+    }, { passive: true });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && radialMenu.classList.contains("is-open") && !isBreaking) {
+        toggleMenu(false);
+      }
+    });
+    window.addEventListener("resize", resizeCanvas);
+  }
 })();
