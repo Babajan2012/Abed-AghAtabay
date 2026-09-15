@@ -353,6 +353,7 @@ a:hover {
   justify-content: center;
   pointer-events: none;
   visibility: hidden;
+  --menu-radius: 150px;
 }
 .radial-menu.is-open {
   pointer-events: auto;
@@ -362,24 +363,24 @@ a:hover {
 .radial-menu__bg {
   position: absolute;
   inset: 0;
-  background-color: rgba(180, 210, 230, 0.55);
+  background-color: rgba(10, 17, 32, 0.94);
   background-image:
-    radial-gradient(circle at 15% 25%, rgba(255, 255, 255, 0.5) 0.5px, transparent 1.5px),
-    radial-gradient(circle at 35% 45%, rgba(255, 255, 255, 0.4) 0.5px, transparent 1.5px),
-    radial-gradient(circle at 55% 15%, rgba(255, 255, 255, 0.5) 0.5px, transparent 1.5px),
-    radial-gradient(circle at 75% 65%, rgba(255, 255, 255, 0.45) 0.5px, transparent 1.5px),
-    radial-gradient(circle at 85% 35%, rgba(255, 255, 255, 0.5) 0.5px, transparent 1.5px),
-    radial-gradient(circle at 25% 75%, rgba(255, 255, 255, 0.4) 0.5px, transparent 1.5px),
-    radial-gradient(circle at 65% 85%, rgba(255, 255, 255, 0.5) 0.5px, transparent 1.5px),
-    radial-gradient(circle at 45% 55%, rgba(255, 255, 255, 0.4) 0.5px, transparent 1.5px),
-    radial-gradient(circle at 95% 95%, rgba(255, 255, 255, 0.5) 0.5px, transparent 1.5px),
-    radial-gradient(circle at 5% 5%, rgba(255, 255, 255, 0.5) 0.5px, transparent 1.5px),
-    radial-gradient(ellipse at top, rgba(200, 220, 240, 0.3) 0%, transparent 60%),
-    radial-gradient(ellipse at bottom, rgba(100, 130, 160, 0.4) 0%, transparent 60%);
+    radial-gradient(circle at 15% 25%, rgba(255, 255, 255, 0.08) 0.5px, transparent 1.5px),
+    radial-gradient(circle at 35% 45%, rgba(255, 255, 255, 0.06) 0.5px, transparent 1.5px),
+    radial-gradient(circle at 55% 15%, rgba(255, 255, 255, 0.08) 0.5px, transparent 1.5px),
+    radial-gradient(circle at 75% 65%, rgba(255, 255, 255, 0.06) 0.5px, transparent 1.5px),
+    radial-gradient(circle at 85% 35%, rgba(255, 255, 255, 0.08) 0.5px, transparent 1.5px),
+    radial-gradient(circle at 25% 75%, rgba(255, 255, 255, 0.06) 0.5px, transparent 1.5px),
+    radial-gradient(circle at 65% 85%, rgba(255, 255, 255, 0.08) 0.5px, transparent 1.5px),
+    radial-gradient(circle at 45% 55%, rgba(255, 255, 255, 0.06) 0.5px, transparent 1.5px),
+    radial-gradient(circle at 95% 95%, rgba(255, 255, 255, 0.08) 0.5px, transparent 1.5px),
+    radial-gradient(circle at 5% 5%, rgba(255, 255, 255, 0.08) 0.5px, transparent 1.5px),
+    radial-gradient(ellipse at top, rgba(200, 220, 240, 0.18) 0%, transparent 60%),
+    radial-gradient(ellipse at bottom, rgba(100, 130, 160, 0.18) 0%, transparent 60%);
   background-size: 12px 12px, 14px 14px, 11px 11px, 13px 13px, 10px 10px, 15px 15px, 12px 12px, 14px 14px, 11px 11px, 13px 13px, 100% 100%, 100% 100%;
   background-position: 0 0, 5px 5px, 2px 8px, 7px 2px, 1px 4px, 9px 7px, 4px 9px, 6px 1px, 8px 8px, 3px 6px, 0 0, 0 100%;
-  backdrop-filter: blur(28px) saturate(110%);
-  -webkit-backdrop-filter: blur(28px) saturate(110%);
+  backdrop-filter: blur(32px) saturate(130%);
+  -webkit-backdrop-filter: blur(32px) saturate(130%);
   opacity: 0;
   transition: opacity 0.5s ease;
   pointer-events: none;
@@ -432,7 +433,9 @@ a:hover {
 }
 
 .radial-menu__center {
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
   z-index: 2;
   display: grid;
   place-items: center;
@@ -442,11 +445,11 @@ a:hover {
   background: var(--card);
   border: 1px solid var(--border);
   box-shadow: 0 20px 60px rgba(29, 111, 242, 0.25);
-  transform: scale(0);
+  transform: translate(-50%, -50%) scale(0);
   transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s;
 }
 .radial-menu.is-open .radial-menu__center {
-  transform: scale(1);
+  transform: translate(-50%, -50%) scale(1);
 }
 .radial-menu__label {
   font-size: 0.8rem;
@@ -473,13 +476,21 @@ a:hover {
   margin-left: -65px;
   margin-top: -22px;
   opacity: 0;
-  transform: rotate(calc(-90deg + var(--i) * 45deg)) translateY(0);
   transition: transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.5s ease;
 }
+.radial-menu__list li:nth-child(1) { transform: rotate(-90deg) translateY(0); }
+.radial-menu__list li:nth-child(2) { transform: rotate(-45deg) translateY(0); }
+.radial-menu__list li:nth-child(3) { transform: rotate(0deg) translateY(0); }
+.radial-menu__list li:nth-child(4) { transform: rotate(45deg) translateY(0); }
+.radial-menu__list li:nth-child(5) { transform: rotate(90deg) translateY(0); }
 .radial-menu.is-open .radial-menu__list li {
   opacity: 1;
-  transform: rotate(calc(-90deg + var(--i) * 45deg)) translateY(min(22vh, 150px));
+  transform: rotate(-90deg) translateY(var(--menu-radius));
 }
+.radial-menu.is-open .radial-menu__list li:nth-child(2) { transform: rotate(-45deg) translateY(var(--menu-radius)); }
+.radial-menu.is-open .radial-menu__list li:nth-child(3) { transform: rotate(0deg) translateY(var(--menu-radius)); }
+.radial-menu.is-open .radial-menu__list li:nth-child(4) { transform: rotate(45deg) translateY(var(--menu-radius)); }
+.radial-menu.is-open .radial-menu__list li:nth-child(5) { transform: rotate(90deg) translateY(var(--menu-radius)); }
 .radial-menu.is-open .radial-menu__list li:nth-child(1) { transition-delay: 0.25s; }
 .radial-menu.is-open .radial-menu__list li:nth-child(2) { transition-delay: 0.3s; }
 .radial-menu.is-open .radial-menu__list li:nth-child(3) { transition-delay: 0.35s; }
@@ -493,7 +504,6 @@ a:hover {
   width: 130px;
   height: 44px;
   padding: 0 0.5rem;
-  transform: translate(-50%, -50%) rotate(calc(90deg - var(--i) * 45deg));
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -510,11 +520,40 @@ a:hover {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
   transition: transform 0.35s ease, background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
-.radial-menu__item:hover {
+.radial-menu__list li:nth-child(1) .radial-menu__item { transform: translate(-50%, -50%) rotate(90deg); }
+.radial-menu__list li:nth-child(2) .radial-menu__item { transform: translate(-50%, -50%) rotate(45deg); }
+.radial-menu__list li:nth-child(3) .radial-menu__item { transform: translate(-50%, -50%) rotate(0deg); }
+.radial-menu__list li:nth-child(4) .radial-menu__item { transform: translate(-50%, -50%) rotate(-45deg); }
+.radial-menu__list li:nth-child(5) .radial-menu__item { transform: translate(-50%, -50%) rotate(-90deg); }
+.radial-menu__list li:nth-child(1) .radial-menu__item:hover {
   color: #fff;
   background: var(--gradient);
   border-color: transparent;
-  transform: translate(-50%, -50%) rotate(calc(90deg - var(--i) * 45deg)) scale(1.08);
+  transform: translate(-50%, -50%) rotate(90deg) scale(1.08);
+}
+.radial-menu__list li:nth-child(2) .radial-menu__item:hover {
+  color: #fff;
+  background: var(--gradient);
+  border-color: transparent;
+  transform: translate(-50%, -50%) rotate(45deg) scale(1.08);
+}
+.radial-menu__list li:nth-child(3) .radial-menu__item:hover {
+  color: #fff;
+  background: var(--gradient);
+  border-color: transparent;
+  transform: translate(-50%, -50%) rotate(0deg) scale(1.08);
+}
+.radial-menu__list li:nth-child(4) .radial-menu__item:hover {
+  color: #fff;
+  background: var(--gradient);
+  border-color: transparent;
+  transform: translate(-50%, -50%) rotate(-45deg) scale(1.08);
+}
+.radial-menu__list li:nth-child(5) .radial-menu__item:hover {
+  color: #fff;
+  background: var(--gradient);
+  border-color: transparent;
+  transform: translate(-50%, -50%) rotate(-90deg) scale(1.08);
 }
 .radial-menu__item.active {
   color: #fff;
@@ -555,12 +594,6 @@ a:hover {
   transform: translateY(-3px);
 }
 
-/* مخصوص دسکتاپ: دکمه همبرگری مخفی */
-@media (min-width: 992px) {
-  .nav-burger {
-    display: none;
-  }
-}
 
 /* ---------- Hero ---------- */
 .hero {
