@@ -112,6 +112,19 @@ a:hover {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
+  animation: shimmer 3s ease infinite;
+  background-size: 200% auto;
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+  100% { background-position: 0% center; }
+}
+
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* ---------- بخش‌ها ---------- */
@@ -736,6 +749,7 @@ a:hover {
   color: var(--primary);
   font-weight: 600;
   font-size: 0.9rem;
+  animation: heroFadeUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.1s both;
 }
 
 .hero-title {
@@ -743,6 +757,7 @@ a:hover {
   font-weight: 900;
   line-height: 1.25;
   margin-bottom: 1.2rem;
+  animation: heroFadeUp 1s cubic-bezier(0.22,1,0.36,1) 0.2s both;
 }
 .hero-title span {
   display: block;
@@ -784,12 +799,14 @@ a:hover {
   color: var(--text-muted);
   max-width: 560px;
   margin-bottom: 2rem;
+  animation: heroFadeUp 1s cubic-bezier(0.22,1,0.36,1) 0.5s both;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  animation: heroFadeUp 1s cubic-bezier(0.22,1,0.36,1) 0.7s both;
 }
 
 .avatar-ring {
@@ -797,6 +814,7 @@ a:hover {
   width: 350px;
   height: 350px;
   margin: 0 auto;
+  animation: heroFadeUp 1.2s cubic-bezier(0.22,1,0.36,1) 0.4s both;
 }
 .avatar-ring::before {
   content: "";
