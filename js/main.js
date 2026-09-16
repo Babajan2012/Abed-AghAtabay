@@ -31,7 +31,7 @@
       "about-head": "درباره من",
       "about.title": "من کی هستم؟",
       "about.p1":
-        "من عابد هستم، توسعه‌دهنده فول‌استک با علاقه به ساخت وب‌سایت‌های مدرن و ریسپانسیو. همیشه به دنبال یادگیری تکنولوژی‌های جدید و بهبود مهارت‌های خود هستم.",
+        "من عابد آق آتابای هستم، توسعه‌دهنده فول‌استک با علاقه به ساخت وب‌سایت‌های مدرن و ریسپانسیو. همیشه به دنبال یادگیری تکنولوژی‌های جدید و بهبود مهارت‌های خود هستم.",
       "about.p2":
         "این قالب به گونه‌ای طراحی شده که پایه‌ای محکم برای یک سایت شخصی حرفه‌ای باشد. همه بخش‌ها کاملاً ریسپانسیو و با انیمیشن‌های نرم ساخته شده‌اند.",
       "about.name": "نام:",
@@ -40,7 +40,7 @@
       "about.role": "نقش:",
       "about.roleVal": "توسعه‌دهنده فول‌استک",
       "about.location": "موقعیت:",
-      "about.locationVal": "تهران، ایران",
+      "about.locationVal": "گلستان، ایران",
       "about.years": "سال تجربه",
       "about.projects": "پروژه کامل",
       "about.btn": "سفارش پروژه",
@@ -55,7 +55,7 @@
       "portfolio.p3t": "وبلاگ شخصی",
       "portfolio.p3d": "سیستم مدیریت محتوا با Vue و پایگاه‌داده ابری.",
       "journey-head": "مسیر من",
-      "journey.title": "یک سال برنامه‌نویسی",
+      "journey.title": "مسیر تا به اینجا",
       "journey.subtitle":
         "از اولین خط کد تا امروز — سفری واقعی با تمام چالش‌ها و یادگیری‌ها.",
       "journey.m1.title": "شروع با HTML و CSS",
@@ -77,7 +77,7 @@
       "contact.title": "خوشحال می‌شوم پیام شما را دریافت کنم",
       "contact.email": "ایمیل",
       "contact.location": "موقعیت",
-      "contact.locationVal": "تهران، ایران",
+      "contact.locationVal": "گلستان، ایران",
       "contact.fName": "نام",
       "contact.phName": "نام خود را وارد کنید",
       "contact.fEmail": "ایمیل",
@@ -100,7 +100,7 @@
       "footer.s4": "بهینه‌سازی و سرعت",
       "footer.s5": "ریسپانسیو و موبایل",
       "footer.contactTitle": "تماس",
-      "footer.location": "تهران، ایران",
+      "footer.location": "گلستان، ایران",
       "footer.copyrightName": "عابد آق‌آتابای",
     },
     en: {
@@ -128,7 +128,7 @@
       "about-head": "About Me",
       "about.title": "Who am I?",
       "about.p1":
-        "I'm Abed, a fullstack developer passionate about building modern and responsive websites. I'm always eager to learn new technologies and improve my skills.",
+        "I'm Abed AghAtabay, a fullstack developer passionate about building modern and responsive websites. I'm always eager to learn new technologies and improve my skills.",
       "about.p2":
         "This template is designed as a solid base for a professional personal website. All sections are fully responsive and built with smooth animations.",
       "about.name": "Name:",
@@ -137,7 +137,7 @@
       "about.role": "Role:",
       "about.roleVal": "Fullstack Developer",
       "about.location": "Location:",
-      "about.locationVal": "Tehran, Iran",
+      "about.locationVal": "Golestan, Iran",
       "about.years": "Years Experience",
       "about.projects": "Projects Done",
       "about.btn": "Hire Me",
@@ -152,7 +152,7 @@
       "portfolio.p3t": "Personal Blog",
       "portfolio.p3d": "Content management with Vue and cloud database.",
       "journey-head": "My Journey",
-      "journey.title": "One Year of Coding",
+      "journey.title": "The path here",
       "journey.subtitle":
         "From the first line of code to today — a real journey with challenges and growth.",
       "journey.m1.title": "HTML & CSS",
@@ -174,7 +174,7 @@
       "contact.title": "I'd love to hear from you",
       "contact.email": "Email",
       "contact.location": "Location",
-      "contact.locationVal": "Tehran, Iran",
+      "contact.locationVal": "Golestan, Iran",
       "contact.fName": "Name",
       "contact.phName": "Enter your name",
       "contact.fEmail": "Email",
@@ -197,7 +197,7 @@
       "footer.s4": "Performance & Optimization",
       "footer.s5": "Responsive & Mobile",
       "footer.contactTitle": "Contact",
-      "footer.location": "Tehran, Iran",
+      "footer.location": "Golestan, Iran",
       "footer.copyrightName": "Abed AghAtabay",
     },
   };
@@ -252,7 +252,7 @@
       if (i18n[lang] && i18n[lang][k] !== undefined)
         el.placeholder = i18n[lang][k];
     });
-    document.title = lang === "fa" ? "عابد آق آتابای" : "Abed AghAtabay";
+    document.title = lang === "fa" ? "عابد آق آتابای | توسعه دهنده فول استک" : "Abed AghAtabay | Fullstack Develeper";
     const lb = document.getElementById("langToggle");
     if (lb) lb.textContent = lang === "fa" ? "EN" : "فا";
     startTyping(lang);
