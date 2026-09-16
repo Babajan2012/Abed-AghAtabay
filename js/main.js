@@ -21,7 +21,7 @@
       "hero.roles": [
         "توسعه‌دهنده فول‌استک",
         "توسعه‌دهنده بک‌اند",
-        "طراح رابط کاربری"
+        "طراح رابط کاربری",
       ],
       "hero.desc":
         "به وب‌سایت شخصی من خوش آمدید. من عاشق طراحی تجربه‌های کاربری زیبا، مدرن و کارآمد هستم.",
@@ -56,17 +56,23 @@
       "portfolio.p3d": "سیستم مدیریت محتوا با Vue و پایگاه‌داده ابری.",
       "journey-head": "مسیر من",
       "journey.title": "یک سال برنامه‌نویسی",
-      "journey.subtitle": "از اولین خط کد تا امروز — سفری واقعی با تمام چالش‌ها و یادگیری‌ها.",
+      "journey.subtitle":
+        "از اولین خط کد تا امروز — سفری واقعی با تمام چالش‌ها و یادگیری‌ها.",
       "journey.m1.title": "شروع با HTML و CSS",
-      "journey.m1.desc": "اولین قدم: ساخت صفحات ساده و یادگیری ساختار وب. هر خط کد یک درس جدید بود.",
+      "journey.m1.desc":
+        "اولین قدم: ساخت صفحات ساده و یادگیری ساختار وب. هر خط کد یک درس جدید بود.",
       "journey.m3.title": "اولین پروژه واقعی",
-      "journey.m3.desc": "یک وب‌سایت شرکتی ساده با طراحی ریسپانسیو. اولین بار که کد من زنده شد.",
+      "journey.m3.desc":
+        "یک وب‌سایت شرکتی ساده با طراحی ریسپانسیو. اولین بار که کد من زنده شد.",
       "journey.m6.title": "ورود به JavaScript",
-      "journey.m6.desc": "یادگیری منطق برنامه‌نویسی و تعامل با کاربر. از استاتیک به دینامیک.",
+      "journey.m6.desc":
+        "یادگیری منطق برنامه‌نویسی و تعامل با کاربر. از استاتیک به دینامیک.",
       "journey.m9.title": "PHP و Laravel",
-      "journey.m9.desc": "ورود به دنیای بک‌اند، پایگاه داده و API. درک عمیق‌تر از معماری نرم‌افزار.",
+      "journey.m9.desc":
+        "ورود به دنیای بک‌اند، پایگاه داده و API. درک عمیق‌تر از معماری نرم‌افزار.",
       "journey.m12.title": "توسعه‌دهنده فول‌استک",
-      "journey.m12.desc": "ترکیب تمام مهارت‌ها برای ساخت تجربه‌های کاربری کامل و مدرن.",
+      "journey.m12.desc":
+        "ترکیب تمام مهارت‌ها برای ساخت تجربه‌های کاربری کامل و مدرن.",
       "contact-head": "ارتباط با من",
       "contact.title": "خوشحال می‌شوم پیام شما را دریافت کنم",
       "contact.email": "ایمیل",
@@ -109,7 +115,11 @@
       "hero.badge": "Fullstack Developer",
       "hero.greet": "Hi, I'm",
       "hero.name": "Abed AghAtabay",
-      "hero.roles": ["Fullstack Developer", "Backend Developer", "UI/UX Designer"],
+      "hero.roles": [
+        "Fullstack Developer",
+        "Backend Developer",
+        "UI/UX Designer",
+      ],
       "hero.desc":
         "Welcome to my personal website. I love crafting beautiful, modern and efficient user experiences.",
       "hero.btnPortfolio": "View Projects",
@@ -143,17 +153,23 @@
       "portfolio.p3d": "Content management with Vue and cloud database.",
       "journey-head": "My Journey",
       "journey.title": "One Year of Coding",
-      "journey.subtitle": "From the first line of code to today — a real journey with challenges and growth.",
+      "journey.subtitle":
+        "From the first line of code to today — a real journey with challenges and growth.",
       "journey.m1.title": "HTML & CSS",
-      "journey.m1.desc": "First step: building simple pages and learning web structure. Every line was a new lesson.",
+      "journey.m1.desc":
+        "First step: building simple pages and learning web structure. Every line was a new lesson.",
       "journey.m3.title": "First Real Project",
-      "journey.m3.desc": "A simple responsive corporate site. The first time my code came alive.",
+      "journey.m3.desc":
+        "A simple responsive corporate site. The first time my code came alive.",
       "journey.m6.title": "Learning JavaScript",
-      "journey.m6.desc": "Programming logic and user interaction. Moving from static to dynamic.",
+      "journey.m6.desc":
+        "Programming logic and user interaction. Moving from static to dynamic.",
       "journey.m9.title": "PHP & Laravel",
-      "journey.m9.desc": "Entering backend, databases and APIs. Deeper understanding of software architecture.",
+      "journey.m9.desc":
+        "Entering backend, databases and APIs. Deeper understanding of software architecture.",
       "journey.m12.title": "Fullstack Developer",
-      "journey.m12.desc": "Combining all skills to build complete, modern user experiences.",
+      "journey.m12.desc":
+        "Combining all skills to build complete, modern user experiences.",
       "contact-head": "Contact",
       "contact.title": "I'd love to hear from you",
       "contact.email": "Email",
@@ -206,7 +222,9 @@
       del = false;
     function tick() {
       const w = roles[ri];
-      typedEl.textContent = del ? w.substring(0, ci - 1) : w.substring(0, ci + 1);
+      typedEl.textContent = del
+        ? w.substring(0, ci - 1)
+        : w.substring(0, ci + 1);
       ci += del ? -1 : 1;
       let spd = del ? 40 : 80;
       if (!del && ci === w.length) {
@@ -295,7 +313,9 @@
 
   /* ---------- لینک فعال ---------- */
   const sections = document.querySelectorAll("section[id]");
-  const navLinks = document.querySelectorAll(".radial-menu__item, .navbar-nav .nav-link");
+  const navLinks = document.querySelectorAll(
+    ".radial-menu__item, .navbar-nav .nav-link",
+  );
   function setActive() {
     let cur = "";
     const sp = window.scrollY + 120;
@@ -438,14 +458,23 @@
       link.addEventListener("click", () => toggleMenu(false));
     });
     radialMenu.addEventListener("click", (e) => {
-      if (!e.target.closest(".radial-menu__item, .radial-menu__social, .nav-burger, .radial-menu__center")) {
+      if (
+        !e.target.closest(
+          ".radial-menu__item, .radial-menu__social, .nav-burger, .radial-menu__center",
+        )
+      ) {
         toggleMenu(false);
       }
     });
-    radialMenu.addEventListener("touchstart", (e) => {
-      if (e.target.closest(".radial-menu__item, .radial-menu__social")) return;
-      toggleMenu(false);
-    }, { passive: true });
+    radialMenu.addEventListener(
+      "touchstart",
+      (e) => {
+        if (e.target.closest(".radial-menu__item, .radial-menu__social"))
+          return;
+        toggleMenu(false);
+      },
+      { passive: true },
+    );
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && radialMenu.classList.contains("is-open")) {
         toggleMenu(false);
